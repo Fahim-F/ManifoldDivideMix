@@ -17,7 +17,7 @@ def unpickle(file):
     return dict
 
 class cifar_dataset(Dataset): 
-    def __init__(self, dataset, r, noise_mode, ood_noise, root_dir, transform, mode, noise_file='/raid/home/fahimehf/Codes/Self-Semi/datasets/cifar100-noisy_ood_02', corruption="imagenet32", ood=[], pred=[], probability=[], log='', epoch=0,transform_st=None): 
+    def __init__(self, dataset, r, noise_mode, ood_noise, root_dir, transform, mode, noise_file='/datasets/cifar100-noisy_ood_02', corruption="imagenet32", ood=[], pred=[], probability=[], log='', epoch=0,transform_st=None): 
         self.root_dir = root_dir
         self.r = r # noise ratio
         self.ood_noise = ood_noise

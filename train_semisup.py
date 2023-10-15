@@ -193,7 +193,7 @@ args = parser.parse_args()
 
 def main():
     
-    wandb.init(project="Manifold-test",  entity="fahimeh")
+    wandb.init(project="Manifold-test")
 
     args.exp_dir.mkdir(parents=True, exist_ok=True)
     try:

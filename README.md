@@ -13,8 +13,28 @@ Extensive experiments on multiple synthetic-noise image benchmarks and real-worl
 
 ---
 
->> Codes will be uploaded soon ... 
+<!--  >> Codes will be uploaded soon ... -->
 
 
+## Running the code
+
+<!-- First you need to install dependencies by running `pip install -r requirements.txt`. -->
+
+You can download pretrained self-supervised models from 
+[Dropbox](https://www.dropbox.com/scl/fo/jp8u80wrkj7z07f0mlpxb/h?rlkey=h24ging0at95emwc6yr0dklxg&dl=0) and put them into `./save` folder 
+
+Then you can run the code for CIFAR
+```
+python train_semisup.py --weights finetune --data-dir /path/to/cifar100 --exp-dir <experiment-dir>  --pretrained <path-of-pretrained-ssl-model> --arch resnet18 --ood-ratio 0.2 --noise-ratio 0.2 --warmup-epoch 20 --epochs 300 --clustering True --lr-head 0.2 --lr-backbone 0.002 --interval 10
+```
+for Mini-Imagenet dataset
+```
+python3 train_semisup_miniimagenet.py --weights finetune --data-dir /path/to/mini-imagenet --exp-dir <experiment-dir>  --pretrained <path-of-pretrained-ssl-model> --arch resnet18 --ood-ratio 0.2 --noise-ratio 0.2 --warmup-epoch 10 --epochs 50 --clustering True --lr-head 0.2 --lr-backbone 0.002 --interval 10
+```
+<!-- or for mini-WebVision
+```
+python3 train_semisup_miniimagenet.py --weights finetune --data-dir /path/to/mini-webvision --exp-dir <experiment-dir>  --pretrained <path-of-pretrained-ssl-model> --arch resnet18 --ood-ratio 0.2 --noise-ratio 0.2 --warmup-epoch 10 --epochs 50 --clustering True --lr-head 0.2 --lr-backbone 0.002 --interval 10
+```
+-->
 ---
 

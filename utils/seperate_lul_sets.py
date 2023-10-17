@@ -6,9 +6,9 @@ from matplotlib import pyplot as plt
 
 
 
-def seperate_lul_sets(args, val_loader, model, gpu, epoch=5):
+def seperate_lul_sets(args, val_loader, model, epoch=5):
 
-    criterion_loss = nn.CrossEntropyLoss(reduction='none').cuda(gpu)
+    criterion_loss = nn.CrossEntropyLoss(reduction='none').cuda(args.gpu)
     model.eval()
 
     sample_loss= []

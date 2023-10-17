@@ -342,7 +342,7 @@ def main():
                 ood_index = find_outliers(val_loader, model, args.gpu, removal_ratio)
                 mask_ood = 1 - ood_index.cpu().numpy()
 
-                pred, prob = seperate_lul_sets(args, val_loader, model, args.gpu, epoch)
+                pred, prob = seperate_lul_sets(args, val_loader, model, epoch)
 
                 labeled_dataset = cifar_dataset(dataset='cifar100', noise_mode=args.noise_type, r=args.noise_ratio, ood_noise=args.ood_ratio, root_dir=args.data_dir, transform=transform_weak_C100, mode="labeled", noise_file=args.noise_file, corruption=args.corruption, ood=mask_ood, pred=pred, probability=prob, transform_st=transform_strong_C100)
                 unlabeled_dataset = cifar_dataset(dataset='cifar100', noise_mode=args.noise_type, r=args.noise_ratio,ood_noise=args.ood_ratio, root_dir=args.data_dir, transform=transform_weak_C100, mode="unlabeled", noise_file=args.noise_file, corruption=args.corruption, ood=mask_ood, pred=pred, transform_st=transform_strong_C100)                    

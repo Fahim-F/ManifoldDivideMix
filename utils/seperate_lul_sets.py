@@ -14,8 +14,8 @@ def seperate_lul_sets(args, val_loader, model, epoch=5):
     sample_loss= []
     with torch.no_grad():
         for images, target, _ in val_loader:
-            _,_, output = model(images.cuda(gpu, non_blocking=True))
-            loss = criterion_loss(output, target.cuda(gpu, non_blocking=True))
+            _,_, output = model(images.cuda(args.gpu, non_blocking=True))
+            loss = criterion_loss(output, target.cuda(args.gpu, non_blocking=True))
             sample_loss.append(loss.cpu().numpy())
                     
     sample_loss = np.concatenate(sample_loss)

@@ -38,3 +38,13 @@ python3 train_semisup_miniimagenet.py --weights finetune --data-dir /path/to/min
 -->
 ---
 
+
+
+## Cite ManifoldDivideMix
+<pre>
+@article{fooladgar2023manifold,
+  title={Manifold DivideMix: A Semi-Supervised Contrastive Learning Framework for Severe Label Noise},
+  author={Fooladgar, Fahimeh and To, Minh Nguyen Nhat and Mousavi, Parvin and Abolmaesumi, Purang},
+  journal={arXiv preprint arXiv:2308.06861},
+  year={2023}
+}</pre>
